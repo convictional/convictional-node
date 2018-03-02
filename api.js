@@ -1,5 +1,4 @@
 const request = require('request')
-
 module.exports = {
   getOrder: (id, apiKey) => {
     return new Promise((resolve, reject) => {
@@ -875,6 +874,183 @@ module.exports = {
       request({
         url: 'https://api.convictional.com/logs',
         headers: { 'Authorization': apiKey },
+        method: 'DELETE',
+        json: ids
+      }, (error, res, body) => {
+        if (error) {
+          reject(error)
+        } else {
+          resolve(body)
+        }
+      })
+    })
+  },
+  getUser: (id, adminKey) => {
+    return new Promise((resolve, reject) => {
+      request({
+        url: 'https://api.convictional.com/users/' + id,
+        headers: { 'Authorization': adminKey },
+        method: 'GET'
+      }, (error, res, body) => {
+        if (error) {
+          reject(error)
+        } else {
+          resolve(JSON.parse(body))
+        }
+      })
+    })
+  },
+  getUsers: (query, adminKey) => {
+    return new Promise((resolve, reject) => {
+      request({
+        url: 'https://api.convictional.com/users' + query,
+        headers: { 'Authorization': adminKey },
+        method: 'GET'
+      }, (error, res, body) => {
+        if (error) {
+          reject(error)
+        } else {
+          resolve(JSON.parse(body))
+        }
+      })
+    })
+  },
+  postUser: (record, adminKey) => {
+    return new Promise((resolve, reject) => {
+      request({
+        url: 'https://api.convictional.com/users',
+        headers: { 'Authorization': adminKey },
+        method: 'POST',
+        json: record
+      }, (error, res, body) => {
+        if (error) {
+          reject(error)
+        } else {
+          resolve(body)
+        }
+      })
+    })
+  },
+  postUsers: (records, adminKey) => {
+    return new Promise((resolve, reject) => {
+      var recordLength = records.length
+      if (recordLength >= 100) {
+        var count = Math.round(recordLength / 100)
+        var putUsers = (i) => {
+          if (i > 0) {
+            request({
+              url: 'https://api.convictional.com/users',
+              headers: { 'Authorization': adminKey },
+              method: 'POST',
+              json: records.splice(0, 100)
+            }, (error, res, body) => {
+              if (error) {
+                reject(error)
+              } else {
+                setTimeout(() => {
+                  putUsers(i - 1)
+                }, 500)
+              }
+            })
+          } else {
+            resolve({ 'Created': recordLength })
+          }
+        }
+        putUsers(count + 1)
+      } else {
+        request({
+          url: 'https://api.convictional.com/users',
+          headers: { 'Authorization': adminKey },
+          method: 'POST',
+          json: records
+        }, (error, res, body) => {
+          if (error) {
+            reject(error)
+          } else {
+            resolve(body)
+          }
+        })
+      }
+    })
+  },
+  putUser: (record, adminKey) => {
+    return new Promise((resolve, reject) => {
+      request({
+        url: 'https://api.convictional.com/users/' + record._id,
+        headers: { 'Authorization': adminKey },
+        method: 'PUT',
+        json: record
+      }, (error, res, body) => {
+        if (error) {
+          reject(error)
+        } else {
+          resolve(body)
+        }
+      })
+    })
+  },
+  putUsers: (records, adminKey) => {
+    return new Promise((resolve, reject) => {
+      var recordLength = records.length
+      if (recordLength >= 100) {
+        var count = Math.round(recordLength / 100)
+        var putUsers = (i) => {
+          if (i > 0) {
+            request({
+              url: 'https://api.convictional.com/users',
+              headers: { 'Authorization': adminKey },
+              method: 'PUT',
+              json: records.splice(0, 100)
+            }, (error, res, body) => {
+              if (error) {
+                reject(error)
+              } else {
+                setTimeout(() => {
+                  putUsers(i - 1)
+                }, 500)
+              }
+            })
+          } else {
+            resolve({ 'Modified': recordLength })
+          }
+        }
+        putUsers(count + 1)
+      } else {
+        request({
+          url: 'https://api.convictional.com/users',
+          headers: { 'Authorization': adminKey },
+          method: 'PUT',
+          json: records
+        }, (error, res, body) => {
+          if (error) {
+            reject(error)
+          } else {
+            resolve(body)
+          }
+        })
+      }
+    })
+  },
+  deleteUser: (id, adminKey) => {
+    return new Promise((resolve, reject) => {
+      request({
+        url: 'https://api.convictional.com/users/' + id,
+        headers: { 'Authorization': adminKey },
+        method: 'DELETE'
+      }, (error, res, body) => {
+        if (error) {
+          reject(error)
+        } else {
+          resolve(body)
+        }
+      })
+    })
+  },
+  deleteUsers: (ids, adminKey) => {
+    return new Promise((resolve, reject) => {
+      request({
+        url: 'https://api.convictional.com/users',
+        headers: { 'Authorization': adminKey },
         method: 'DELETE',
         json: ids
       }, (error, res, body) => {
