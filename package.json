@@ -1,0 +1,24 @@
+{
+  "name": "convictional-client-node",
+  "version": "1.0.0",
+  "description": "This is a client wrapper for using the Convictional Commerce API",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rogerkirkness/convictional-node.git"
+  },
+  "keywords": [
+    "edi",
+    "ecommerce",
+    "api",
+    "integration"
+  ],
+  "author": "Convictional Commerce, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rogerkirkness/convictional-node/issues"
+  },
+  "homepage": "https://docs.convictional.com"
+}
