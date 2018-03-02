@@ -1,6 +1,6 @@
 {
-  "name": "convictional-client-node",
-  "version": "1.0.0",
+  "name": "convictional",
+  "version": "1.0.1",
   "description": "This is a client wrapper for using the Convictional Commerce API",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
