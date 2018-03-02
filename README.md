@@ -21,3 +21,13 @@ convictional.getOrder(orderId, apiKey).then((order) => {
   // Do something with the order...
 }).catch((error) => { console.error(error) })
 ```
+
+## Methods
+
+* Methods start with the HTTP method and end with the resource.
+* The first parameter is a string, object or array with the payload.
+* The second parameter is the API key for the account you are using.
+* All methods return promises, so you must use then/catch verbs.
+
+For example:
+getOrders.then((order) => { // do something with order })
