@@ -30,4 +30,4 @@ convictional.getOrder(orderId, apiKey).then((order) => {
 * All methods return promises, so you must use then/catch verbs.
 
 For example:
-getOrders.then((order) => { // do something with order })
+getOrders.then((orders) => { // do something with orderss })
