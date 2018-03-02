@@ -9,7 +9,7 @@ To install, type:
 
 ## Usage
 
-```
+```javascript
 // Top of your file with other imports...
 var convictional = require('convictional')
 
