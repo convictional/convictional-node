@@ -1,6 +1,6 @@
 {
   "name": "convictional",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "./lib/api.js",
   "description": "This is a client wrapper for using the Convictional Commerce API",
   "scripts": {
