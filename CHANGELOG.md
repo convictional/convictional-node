@@ -1,5 +1,8 @@
 ## Changelog
 
+### 1.0.12 - 2018-03-05
+* Fixing a bug involved getPartners.
+
 ### 1.0.10 - 2018-03-05
 * Add support for invite, sync and translate endpoints.
 
