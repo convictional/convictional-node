@@ -1,8 +1,8 @@
 {
   "name": "convictional",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "./lib/api.js",
-  "description": "This is a client wrapper for using the Convictional Commerce API",
+  "description": "A Node.JS client for the Convictional Commerce API",
   "scripts": {
     "test": "NODE_ENV=test node_modules/.bin/mocha -u exports test/*"
   },

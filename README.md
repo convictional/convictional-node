@@ -1,5 +1,5 @@
 ## Introduction
-This is the the Node.JS client library for the Convictional Commerce API.
+This is the Node.JS client library for the Convictional Commerce API.
 
 For more documentation, please visit our docs site [here](http://docs.convictional.com).
 
