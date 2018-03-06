@@ -43,13 +43,18 @@ convictional.getOrder(orderId, apiKey).then((order) => {
 
 #### Method usage example:
 ```javascript
-var query = '?shipped=false'
+var query = { 'shipped': false }
 getOrders(query)
 .then((orders) => { console.log(orders) })
 .catch((error) => { console.error(error) })
 ```
 
-#### Method naming examples:
+#### List of methods:
+** Actions (RPC) **
+* `sync(method)` - GET (runs and queues) one method, by method name
+* `translate(doc)` - POST (translate) one document, by document
+
+** Orders (REST) **
 * `getOrder(id)` - GET (read) one order, by ID
 * `getOrders(query)` - GET (read) many orders, by query
 * `postOrder(order)` - POST (create) one new order, by order object
@@ -58,3 +63,43 @@ getOrders(query)
 * `putOrders(orders)` - PUT (update) many orders, by array of orders
 * `deleteOrder(id)` - DELETE (delete) one order, by ID
 * `deleteOrders(ids)` - DELETE (delete) many orders, by array of IDs
+
+** Products (REST) **
+* `getProduct(id)` - GET (read) one product, by ID
+* `getProducts(query)` - GET (read) many products, by query
+* `postProduct(product)` - POST (create) one new product, by product object
+* `postProducts(products)` - POST (create) many new products, by array of products
+* `putProduct(product)` - PUT (update) one product, by product object
+* `putProducts(products)` - PUT (update) many products, by array of products
+* `deleteProduct(id)` - DELETE (delete) one product, by ID
+* `deleteProducts(ids)` - DELETE (delete) many products, by array of IDs
+
+** Partners (REST) **
+* `getPartner(id)` - GET (read) one partner, by ID
+* `getPartners(query)` - GET (read) many partners, by query
+* `postPartner(partner)` - POST (create) one new partner, by partner object
+* `postPartners(partners)` - POST (create) many new partners, by array of partners
+* `putPartner(partner)` - PUT (update) one partner, by partner object
+* `putPartners(partners)` - PUT (update) many partners, by array of partners
+* `deletePartner(id)` - DELETE (delete) one partner, by ID
+* `deletePartners(ids)` - DELETE (delete) many partners, by array of IDs
+
+** Prices (REST) **
+* `getPrice(id)` - GET (read) one price, by ID
+* `getPrices(query)` - GET (read) many prices, by query
+* `postPrice(price)` - POST (create) one new price, by price object
+* `postPrices(prices)` - POST (create) many new prices, by array of prices
+* `putPrice(price)` - PUT (update) one price, by price object
+* `putPrices(prices)` - PUT (update) many prices, by array of prices
+* `deletePrice(id)` - DELETE (delete) one price, by ID
+* `deletePrices(ids)` - DELETE (delete) many prices, by array of IDs
+
+** Logs (REST) **
+* `getLog(id)` - GET (read) one log, by ID
+* `getLogs(query)` - GET (read) many logs, by query
+* `postLog(log)` - POST (create) one new log, by log object
+* `postLogs(logs)` - POST (create) many new logs, by array of logs
+* `putLog(log)` - PUT (update) one log, by log object
+* `putLogs(logs)` - PUT (update) many logs, by array of logs
+* `deleteLog(id)` - DELETE (delete) one log, by ID
+* `deleteLogs(ids)` - DELETE (delete) many logs, by array of IDs
