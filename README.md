@@ -103,3 +103,13 @@ getOrders(query)
 * `putLogs(logs)` - PUT (update) many logs, by array of logs
 * `deleteLog(id)` - DELETE (delete) one log, by ID
 * `deleteLogs(ids)` - DELETE (delete) many logs, by array of IDs
+
+** Users (REST) (Admin-only) **
+* `getUser(id)` - GET (read) one user, by ID
+* `getUsers(query)` - GET (read) many users, by query
+* `postUser(user)` - POST (create) one new user, by user object
+* `postUsers(users)` - POST (create) many new users, by array of users
+* `putUser(user)` - PUT (update) one user, by user object
+* `putUsers(users)` - PUT (update) many users, by array of users
+* `deleteUser(id)` - DELETE (delete) one user, by ID
+* `deleteUsers(ids)` - DELETE (delete) many users, by array of IDs

@@ -1,6 +1,9 @@
 ## Changelog
 
 ### 1.1.0 - 2018-03-06
+* Adding methods to manage users.
+
+### 1.1.0 - 2018-03-06
 * Supports JSON object queries instead of string containing params already encoded.
 
 ### 1.0.12 - 2018-03-05
