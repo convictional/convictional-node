@@ -50,11 +50,11 @@ getOrders(query)
 ```
 
 #### List of methods:
-** Actions (RPC) **
+###### Actions (RPC)
 * `sync(method)` - GET (runs and queues) one method, by method name
 * `translate(doc)` - POST (translate) one document, by document
 
-** Orders (REST) **
+###### Orders (REST)
 * `getOrder(id)` - GET (read) one order, by ID
 * `getOrders(query)` - GET (read) many orders, by query
 * `postOrder(order)` - POST (create) one new order, by order object
@@ -64,7 +64,7 @@ getOrders(query)
 * `deleteOrder(id)` - DELETE (delete) one order, by ID
 * `deleteOrders(ids)` - DELETE (delete) many orders, by array of IDs
 
-** Products (REST) **
+###### Products (REST) 
 * `getProduct(id)` - GET (read) one product, by ID
 * `getProducts(query)` - GET (read) many products, by query
 * `postProduct(product)` - POST (create) one new product, by product object
@@ -74,7 +74,7 @@ getOrders(query)
 * `deleteProduct(id)` - DELETE (delete) one product, by ID
 * `deleteProducts(ids)` - DELETE (delete) many products, by array of IDs
 
-** Partners (REST) **
+###### Partners (REST) 
 * `getPartner(id)` - GET (read) one partner, by ID
 * `getPartners(query)` - GET (read) many partners, by query
 * `postPartner(partner)` - POST (create) one new partner, by partner object
@@ -84,7 +84,7 @@ getOrders(query)
 * `deletePartner(id)` - DELETE (delete) one partner, by ID
 * `deletePartners(ids)` - DELETE (delete) many partners, by array of IDs
 
-** Prices (REST) **
+###### Prices (REST) 
 * `getPrice(id)` - GET (read) one price, by ID
 * `getPrices(query)` - GET (read) many prices, by query
 * `postPrice(price)` - POST (create) one new price, by price object
@@ -94,7 +94,7 @@ getOrders(query)
 * `deletePrice(id)` - DELETE (delete) one price, by ID
 * `deletePrices(ids)` - DELETE (delete) many prices, by array of IDs
 
-** Logs (REST) **
+###### Logs (REST) 
 * `getLog(id)` - GET (read) one log, by ID
 * `getLogs(query)` - GET (read) many logs, by query
 * `postLog(log)` - POST (create) one new log, by log object
@@ -103,13 +103,3 @@ getOrders(query)
 * `putLogs(logs)` - PUT (update) many logs, by array of logs
 * `deleteLog(id)` - DELETE (delete) one log, by ID
 * `deleteLogs(ids)` - DELETE (delete) many logs, by array of IDs
-
-** Users (REST) (Admin-only) **
-* `getUser(id)` - GET (read) one user, by ID
-* `getUsers(query)` - GET (read) many users, by query
-* `postUser(user)` - POST (create) one new user, by user object
-* `postUsers(users)` - POST (create) many new users, by array of users
-* `putUser(user)` - PUT (update) one user, by user object
-* `putUsers(users)` - PUT (update) many users, by array of users
-* `deleteUser(id)` - DELETE (delete) one user, by ID
-* `deleteUsers(ids)` - DELETE (delete) many users, by array of IDs

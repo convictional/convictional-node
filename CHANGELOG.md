@@ -1,5 +1,8 @@
 ## Changelog
 
+### 1.1.2 - 2018-03-06
+* Switching README
+
 ### 1.1.0 - 2018-03-06
 * Adding methods to manage users.
 
