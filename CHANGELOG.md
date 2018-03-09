@@ -1,5 +1,8 @@
 ## Changelog
 
+### 1.1.3 - 2018-03-06
+* Add a user onboarding email notifications
+
 ### 1.1.2 - 2018-03-06
 * Switching README
 
