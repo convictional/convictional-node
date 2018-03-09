@@ -1,5 +1,8 @@
 ## Changelog
 
+### 1.1.4 - 2018-03-06
+* Changing bulk post/put "count" to no longer +1
+
 ### 1.1.3 - 2018-03-06
 * Add a user onboarding email notifications
 
