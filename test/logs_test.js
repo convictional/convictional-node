@@ -12,7 +12,7 @@ var convictional = require('../lib/api.js')({
 })
 
 describe('/logs', () => {
-  it('it should return logs from today', (done) => {
+  it('it should return logs from this week', (done) => {
     var getLogsQuery = { 'updatedAfter': moment().subtract(7, 'days') }
     convictional.getLogs(getLogsQuery).then((logs) => {
       expect(logs).to.be.an('array')

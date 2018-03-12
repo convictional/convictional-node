@@ -1,6 +1,10 @@
 ## Changelog
 
-### 1.1.5 - 2018-03-06
+### 1.1.6 - 2018-03-12
+* Adding additional test coverage for logs, orders, partners, products and translate
+* Adding test coverage for using limit and page in query
+
+### 1.1.5 - 2018-03-12
 * Specifying the splice length for bulk calls
 
 ### 1.1.4 - 2018-03-06

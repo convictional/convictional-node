@@ -18,14 +18,4 @@ describe('/users', function () {
       done()
     }).catch((error) => { done(error) })
   })
-  it('it should send user onboarding emails', (done) => {
-    var onboard = {
-      'companyId': 'convictional-dropshipper',
-      'reCompanyId': 'convictional-wholesale',
-      'email': 'roger@convictional.com'
-    }
-    convictional.onboardUser(onboard).then((result) => {
-      done()
-    }).catch((error) => { done(error) })
-  })
 })
