@@ -1,11 +1,13 @@
 {
   "name": "convictional",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "./lib/api.js",
   "description": "A Node.JS client for the Convictional Commerce API",
   "scripts": {
     "test": "NODE_ENV=test node_modules/.bin/mocha -u exports test/*",
-    "commit": "git add -A && git commit -m \"Bump version to $npm_package_version\" && git push"
+    "commit": "git add -A && git commit -m \"Bump version to $npm_package_version\" && git push",
+    "deploy": "npm publish",
+    "code": "npm run commit && npm run deploy"
   },
   "repository": {
     "type": "git",

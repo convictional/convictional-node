@@ -1,5 +1,8 @@
 ## Changelog
 
+### 1.1.5 - 2018-03-06
+* Specifying the splice length for bulk calls
+
 ### 1.1.4 - 2018-03-06
 * Changing bulk post/put "count" to no longer +1
 
