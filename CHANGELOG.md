@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.1.7 - 2018-03-13
+* Complete test coverage for entire API and internal library
+* Convering the response from deleteOne calls to JSON properly
+
 ### 1.1.6 - 2018-03-12
 * Adding additional test coverage for logs, orders, partners, products and translate
 * Adding test coverage for using limit and page in query
