@@ -3,6 +3,10 @@ This is the Node.JS client library for the Convictional Commerce API.
 
 For more documentation, please visit our docs site [here](http://docs.convictional.com).
 
+This is the best way to build apps on Convictional. This library offers complete test coverage across all RPC and REST endpoints and is used in production for all integration work that we do.
+
+The library will be updated as the API changes so ensure you keep it up to date.
+
 To install, type: 
 `npm install convictional`
 

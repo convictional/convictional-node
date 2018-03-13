@@ -1,5 +1,8 @@
 ## Changelog
 
+### 1.1.8 - 2018-03-13
+* Updating README.md
+
 ### 1.1.7 - 2018-03-13
 * Complete test coverage for entire API and internal library
 * Convering the response from deleteOne calls to JSON properly
