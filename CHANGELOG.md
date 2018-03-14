@@ -1,5 +1,8 @@
 ## Changelog
 
+### 1.1.9 - 2018-03-14
+* Changing approach to invite partner to accomodate billing on/off
+
 ### 1.1.8 - 2018-03-13
 * Updating README.md
 
