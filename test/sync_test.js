@@ -17,7 +17,7 @@ describe('/sync', () => {
       convictional.sync(method).then((result) => {
         expect(result).to.equal('Successfully pushed ' + method + ' to queue.')
         done()
-      })
+      }).catch((error) => { done(error) })
     })
   })
 })

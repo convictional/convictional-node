@@ -78,7 +78,7 @@ describe('/products', function () {
       expect(record).to.have.property('vendor').equal(productEntry.vendor)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should create MANY products', (done) => {
     convictional.postProducts(multiProductEntry).then((record) => {
@@ -120,28 +120,52 @@ describe('/products', function () {
     convictional.getProducts(query).then((record) => {
       expect(record).to.be.an('array')
       done()
-    })
+    }).catch((error) => { done(error) })
+  })
+  it('it should find product by SKU', (done) => {
+    var query = { sku: 123 }
+    convictional.getProducts(query).then((record) => {
+      expect(record).to.be.an('array')
+      expect(record.length).to.eql(1)
+      var product = record[0]
+      expect(product).to.be.an('object')
+      expect(product).to.have.property('images')
+      expect(product).to.have.property('tags')
+      expect(product).to.have.property('variants')
+      expect(product).to.have.property('_id')
+      expect(product).to.have.property('code')
+      expect(product).to.have.property('active')
+      expect(product).to.have.property('bodyHtml')
+      expect(product).to.have.property('title')
+      expect(product).to.have.property('type')
+      expect(product).to.have.property('vendor')
+      expect(product).to.have.property('created')
+      expect(product).to.have.property('updated')
+      expect(product).to.have.property('companyId')
+      expect(product.variants[0].sku).to.eql('123')
+      done()
+    }).catch((error) => { done(error) })
   })
   it('it should return second page', (done) => {
     var query = { 'page': 2, 'limit': 1 }
     convictional.getProducts(query).then((record) => {
       expect(record.length).to.equal(1)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should return single record', (done) => {
     var query = { 'limit': 1 }
     convictional.getProducts(query).then((record) => {
       expect(record.length).to.equal(1)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should count records', (done) => {
     var query = { 'count': true }
     convictional.getProducts(query).then((record) => {
       expect(record.count).to.be.a('number')
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should update ONE product', (done) => {
     newProduct._id = id
@@ -160,7 +184,7 @@ describe('/products', function () {
       expect(record).to.have.property('vendor').equal(productEntry.vendor)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should update MANY products', (done) => {
     var newProducts = []
@@ -173,19 +197,19 @@ describe('/products', function () {
     convictional.putProducts(newProducts).then((record) => {
       expect(record).eql({Modified: 2})
       done()
-    })
+    }).catch((error) => { done(error) })
   })
 
   it('it should delete ONE product', (done) => {
     convictional.deleteProduct(id).then((record) => {
       expect(record).eql({Deleted: 1})
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should delete MANY products', (done) => {
     convictional.deleteProducts(ids).then((record) => {
       expect(record).eql({Deleted: 2})
       done()
-    })
+    }).catch((error) => { done(error) })
   })
 })
