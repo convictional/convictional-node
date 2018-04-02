@@ -59,7 +59,7 @@ describe('/partners', function () {
     })
   })
   it('it should return partners from this year', (done) => {
-    var getPartnersQuery = { 'updatedAfter': moment().subtract(365, 'days') }
+    var getPartnersQuery = { 'updatedAfter': moment().subtract(365, 'days').format() }
     convictional.getPartners(getPartnersQuery).then((partners) => {
       expect(partners).to.be.an('array')
       done()

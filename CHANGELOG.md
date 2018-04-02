@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1 - 2018-04-02
+
+* Improving test coverage for date-based queries
+
 ## 1.2.0 - 2018-04-02
 
 * Adding support for API.getProducts({ sku: abc })

@@ -49,7 +49,7 @@ describe('/logs', () => {
     }).catch((error) => { done(error) })
   })
   it('it should return logs by date', (done) => {
-    var getLogsQuery = { 'updatedAfter': moment().subtract(7, 'days') }
+    var getLogsQuery = { 'updatedAfter': moment().subtract(7, 'days').format() }
     convictional.getLogs(getLogsQuery).then((logs) => {
       expect(logs).to.be.an('array')
       done()

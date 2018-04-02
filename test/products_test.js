@@ -91,7 +91,7 @@ describe('/products', function () {
     })
   })
   it('it should return products by date', (done) => {
-    var getProductsQuery = { 'updatedAfter': moment().subtract(30, 'days') }
+    var getProductsQuery = { 'updatedAfter': moment().subtract(30, 'days').format() }
     convictional.getProducts(getProductsQuery).then((products) => {
       expect(products).to.be.an('array')
       done()

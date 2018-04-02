@@ -134,7 +134,7 @@ describe('/orders', function () {
     })
   })
   it('it should return orders by date', (done) => {
-    var getOrdersQuery = { 'updatedAfter': moment().subtract(365, 'days') }
+    var getOrdersQuery = { 'updatedAfter': moment().subtract(365, 'days').format() }
     convictional.getOrders(getOrdersQuery).then((orders) => {
       expect(orders).to.be.an('array')
       done()
