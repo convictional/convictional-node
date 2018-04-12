@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2 - 2018-04-12
+
+* Add user offboarding
+
 ## 1.2.1 - 2018-04-02
 
 * Improving test coverage for date-based queries
