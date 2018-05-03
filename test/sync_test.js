@@ -15,7 +15,7 @@ describe('/sync', () => {
   methods.forEach((method) => {
     it('it should sync: ' + method, (done) => {
       convictional.sync(method).then((result) => {
-        expect(result).to.equal('Successfully pushed ' + method + ' to queue.')
+        expect(result).to.equal('200: Successfully pushed ' + method + ' to queue.')
         done()
       }).catch((error) => { done(error) })
     })

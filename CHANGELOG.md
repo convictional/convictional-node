@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.8 - 2018-05-03
+
+* Running all tests via new test database (mostly <100ms)
+* Bringing to semver parity with other services.
+
 ## 1.2.2 - 2018-04-12
 
 * Add user offboarding

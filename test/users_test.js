@@ -11,12 +11,6 @@ var convictional = require('../lib/api.js')({
 })
 
 describe('/users', function () {
-  it('it should list ONE user', (done) => {
-    convictional.getUser('58MNevyuihnZnK3n2').then((record) => {
-      expect(record).to.be.an('object')
-      done()
-    }).catch((error) => { done(error) })
-  })
   it('it should return users on Shopify', (done) => {
     var getUsersQuery = { 'platform': 'shopify' }
     convictional.getUsers(getUsersQuery).then((records) => {
