@@ -14,7 +14,6 @@ var companyId = 'test'
 var id
 var ids = []
 var partnerEntry = {
-  code: '12345',
   email: 'capartner@example.com',
   priceList: 'Price List for Canada',
   relationship: 'child'
@@ -24,7 +23,6 @@ var newPartner = {
   active: true
 }
 var anotherPartnerEntry = {
-  code: '987654',
   email: 'uspartner@example.com',
   priceList: 'Price List for USA',
   relationship: 'parent'
@@ -40,7 +38,6 @@ describe('/partners', function () {
       expect(record).to.have.property('_id').equal(id)
       expect(record).to.have.property('created')
       expect(record).to.have.property('updated')
-      expect(record).to.have.property('code').equal(partnerEntry.code)
       expect(record).to.have.property('email').equal(partnerEntry.email)
       expect(record).to.have.property('priceList').equal(partnerEntry.priceList)
       expect(record).to.have.property('relationship').equal(partnerEntry.relationship)
@@ -70,7 +67,6 @@ describe('/partners', function () {
       expect(record).to.have.property('_id').equal(id)
       expect(record).to.have.property('created')
       expect(record).to.have.property('updated')
-      expect(record).to.have.property('code').equal(partnerEntry.code)
       expect(record).to.have.property('email').equal(partnerEntry.email)
       expect(record).to.have.property('priceList').equal(partnerEntry.priceList)
       expect(record).to.have.property('relationship').equal(partnerEntry.relationship)
@@ -112,7 +108,6 @@ describe('/partners', function () {
       expect(record).to.have.property('_id').equal(id)
       expect(record).to.have.property('created')
       expect(record).to.have.property('updated')
-      expect(record).to.have.property('code').equal(partnerEntry.code)
       expect(record).to.have.property('email').equal(newPartner.email)
       expect(record).to.have.property('active').equal(newPartner.active)
       expect(record).to.have.property('priceList').equal(partnerEntry.priceList)

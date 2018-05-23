@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.3 - 2018-05-23
+
+* Removing partner "code" field.
+
 ## 1.4.8 - 2018-05-03
 
 * Running all tests via new test database (mostly <100ms)

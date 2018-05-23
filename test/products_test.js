@@ -174,7 +174,7 @@ describe('/products', function () {
       expect(record).to.have.property('created')
       expect(record).to.have.property('updated')
       expect(record).to.have.property('code').equal(productEntry.code)
-      expect(record).to.have.property('active').equal(false)
+      expect(record).to.have.property('active').equal(true)
       expect(record).to.have.property('bodyHtml').equal(productEntry.bodyHtml)
       expect(record).to.have.property('images').eql(productEntry.images)
       expect(record).to.have.property('tags').eql(productEntry.tags)
