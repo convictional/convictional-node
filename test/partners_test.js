@@ -135,10 +135,4 @@ describe('/partners', function () {
       done()
     })
   })
-  it('it should delete MANY partners', (done) => {
-    convictional.deletePartners(ids).then((record) => {
-      expect(record).eql({Deleted: 2})
-      done()
-    })
-  })
 })

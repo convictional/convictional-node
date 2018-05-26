@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.4 - 2018-05-26
+
+* Removing all bulk delete endpoints.
+
 ## 1.5.3 - 2018-05-23
 
 * Removing partner "code" field.

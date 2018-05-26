@@ -206,10 +206,4 @@ describe('/products', function () {
       done()
     }).catch((error) => { done(error) })
   })
-  it('it should delete MANY products', (done) => {
-    convictional.deleteProducts(ids).then((record) => {
-      expect(record).eql({Deleted: 2})
-      done()
-    }).catch((error) => { done(error) })
-  })
 })

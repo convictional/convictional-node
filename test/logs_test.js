@@ -122,10 +122,4 @@ describe('/logs', () => {
       done()
     }).catch((error) => { done(error) })
   })
-  it('it should delete MANY logs', (done) => {
-    convictional.deleteLogs(ids).then((records) => {
-      expect(records).eql({Deleted: 2})
-      done()
-    }).catch((error) => { done(error) })
-  })
 })

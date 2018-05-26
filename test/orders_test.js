@@ -217,10 +217,4 @@ describe('/orders', function () {
       done()
     })
   })
-  it('it should delete MANY orders', (done) => {
-    convictional.deleteOrders(ids).then((record) => {
-      expect(record).eql({Deleted: 2})
-      done()
-    })
-  })
 })
