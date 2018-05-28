@@ -24,7 +24,7 @@ var convictional = require('convictional')({
 // ... later where you want to use it:
 var orderId = '5a692f658f6d524e8282dac7'
 convictional.getOrder(orderId).then((order) => {
-  console.log(order)
+  // Do stuff with order
 }).catch((error) => { console.error(error) })
 ```
 
@@ -38,7 +38,7 @@ var convictional = require('convictional')
 var apiKey = '86e7ccdc-55b5-4066-a79f-7a1e0e59c690'
 var orderId = '5a692f658f6d524e8282dac7'
 convictional.getOrder(orderId, apiKey).then((order) => {
-  console.log(order)
+  // Do stuff with order
 }).catch((error) => { console.error })
 ```
 
@@ -50,24 +50,24 @@ convictional.getOrder(orderId, apiKey).then((order) => {
 * The optional third parameter is the API URL, defaults to main API url: https://api.convictional.com.
 * All methods return promises, so you must use then/catch verbs to handle them.
 
-#### Method usage example:
+### Method usage example
 
 ```javascript
 var query = { 'shipped': false }
 getOrders(query)
-.then((orders) => { console.log(orders) })
+.then((orders) => { // Do stuff with [orders] })
 .catch((error) => { console.error(error) })
 ```
 
-#### List of methods:
+### List of methods
 
-###### Actions (RPC)
+##### Actions (RPC)
 
 * `sync(method)` - GET (runs and queues) one method, by method name
 * `translate(doc)` - POST (translate) one document, by document
 * `invite(email)` - POST (invites) one partner, by partner
 
-###### Orders (REST)
+##### Orders (REST)
 
 * `getOrder(id)` - GET (read) one order, by ID
 * `getOrders(query)` - GET (read) many orders, by query
@@ -77,7 +77,7 @@ getOrders(query)
 * `putOrders(orders)` - PUT (update) many orders, by array of orders
 * `deleteOrder(id)` - DELETE (delete) one order, by ID
 
-###### Products (REST)
+##### Products (REST)
 
 * `getProduct(id)` - GET (read) one product, by ID
 * `getProducts(query)` - GET (read) many products, by query
@@ -87,7 +87,7 @@ getOrders(query)
 * `putProducts(products)` - PUT (update) many products, by array of products
 * `deleteProduct(id)` - DELETE (delete) one product, by ID
 
-###### Partners (REST)
+##### Partners (REST)
 
 * `getPartner(id)` - GET (read) one partner, by ID
 * `getPartners(query)` - GET (read) many partners, by query
@@ -97,7 +97,7 @@ getOrders(query)
 * `putPartners(partners)` - PUT (update) many partners, by array of partners
 * `deletePartner(id)` - DELETE (delete) one partner, by ID
 
-###### Prices (REST)
+##### Prices (REST)
 
 * `getPrice(id)` - GET (read) one price, by ID
 * `getPrices(query)` - GET (read) many prices, by query
@@ -107,7 +107,7 @@ getOrders(query)
 * `putPrices(prices)` - PUT (update) many prices, by array of prices
 * `deletePrice(id)` - DELETE (delete) one price, by ID
 
-###### Logs (REST)
+##### Logs (REST)
 
 * `getLog(id)` - GET (read) one log, by ID
 * `getLogs(query)` - GET (read) many logs, by query
