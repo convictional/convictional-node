@@ -38,16 +38,6 @@ describe('/logs', () => {
       done()
     }).catch((error) => { done(error) })
   })
-  it('it should create MANY logs', (done) => {
-    convictional.postLogs(multiLogEntry).then((records) => {
-      var objectIds = records
-      ids = Object.keys(objectIds).map(key => {
-        return objectIds[key]
-      })
-      expect(Object.keys(records).length).to.eql(2)
-      done()
-    }).catch((error) => { done(error) })
-  })
   it('it should return logs by date', (done) => {
     var getLogsQuery = { 'updatedAfter': moment().subtract(7, 'days').format() }
     convictional.getLogs(getLogsQuery).then((logs) => {
@@ -100,19 +90,6 @@ describe('/logs', () => {
       expect(record).to.have.property('updated')
       expect(record).to.have.property('description').equal('This is log')
       expect(record).to.have.property('companyId').equal(companyId)
-      done()
-    }).catch((error) => { done(error) })
-  })
-  it('it should update MANY logs', (done) => {
-    var newLogs = []
-    var newLog = { description: 'This is totally different' }
-    newLog.id = ids[0]
-    newLogs.push(newLog)
-    var newLogAlt = { description: 'Not even the same description!' }
-    newLogAlt.id = ids[1]
-    newLogs.push(newLogAlt)
-    convictional.putLogs(multiLogEntry).then((records) => {
-      expect(records).eql({Modified: 2})
       done()
     }).catch((error) => { done(error) })
   })

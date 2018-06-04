@@ -45,16 +45,6 @@ describe('/partners', function () {
       done()
     })
   })
-  it('it should create MANY partners', (done) => {
-    convictional.postPartners(multiPartnerEntry).then((record) => {
-      var objectIds = record
-      ids = Object.keys(objectIds).map(key => {
-        return objectIds[key]
-      })
-      expect(Object.keys(record).length).to.eql(2)
-      done()
-    })
-  })
   it('it should return partners from this year', (done) => {
     var getPartnersQuery = { 'updatedAfter': moment().subtract(365, 'days').format() }
     convictional.getPartners(getPartnersQuery).then((partners) => {
@@ -113,19 +103,6 @@ describe('/partners', function () {
       expect(record).to.have.property('priceList').equal(partnerEntry.priceList)
       expect(record).to.have.property('relationship').equal(partnerEntry.relationship)
       expect(record).to.have.property('companyId').equal(companyId)
-      done()
-    })
-  })
-  it('it should update MANY partners', (done) => {
-    var newPartners = []
-    var newPartner = { email: 'test@convictional.com' }
-    newPartner.id = ids[0]
-    newPartners.push(newPartner)
-    var newPartnerAlt = { email: 'convictional@test.com' }
-    newPartnerAlt.id = ids[1]
-    newPartners.push(newPartnerAlt)
-    convictional.putPartners(newPartners).then((record) => {
-      expect(record).eql({Modified: 2})
       done()
     })
   })

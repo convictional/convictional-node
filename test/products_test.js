@@ -12,7 +12,6 @@ var convictional = require('../lib/api.js')({
 })
 var companyId = 'test'
 var id
-var ids = []
 var productEntry = {
   code: '12345',
   active: true,
@@ -80,16 +79,6 @@ describe('/products', function () {
       done()
     }).catch((error) => { done(error) })
   })
-  it('it should create MANY products', (done) => {
-    convictional.postProducts(multiProductEntry).then((record) => {
-      var objectIds = record
-      ids = Object.keys(objectIds).map(key => {
-        return objectIds[key]
-      })
-      expect(Object.keys(record).length).to.eql(2)
-      done()
-    })
-  })
   it('it should return products by date', (done) => {
     var getProductsQuery = { 'updatedAfter': moment().subtract(30, 'days').format() }
     convictional.getProducts(getProductsQuery).then((products) => {
@@ -123,7 +112,7 @@ describe('/products', function () {
     }).catch((error) => { done(error) })
   })
   it('it should find product by SKU', (done) => {
-    var query = { sku: 123 }
+    var query = { sku: 321 }
     convictional.getProducts(query).then((record) => {
       expect(record).to.be.an('array')
       expect(record.length).to.eql(1)
@@ -142,14 +131,7 @@ describe('/products', function () {
       expect(product).to.have.property('created')
       expect(product).to.have.property('updated')
       expect(product).to.have.property('companyId')
-      expect(product.variants[0].sku).to.eql('123')
-      done()
-    }).catch((error) => { done(error) })
-  })
-  it('it should return second page', (done) => {
-    var query = { 'page': 2, 'limit': 1 }
-    convictional.getProducts(query).then((record) => {
-      expect(record.length).to.equal(1)
+      expect(product.variants[0].sku).to.eql('321')
       done()
     }).catch((error) => { done(error) })
   })
@@ -186,20 +168,6 @@ describe('/products', function () {
       done()
     }).catch((error) => { done(error) })
   })
-  it('it should update MANY products', (done) => {
-    var newProducts = []
-    var newProduct = { title: 'Greatest product of all time' }
-    newProduct.id = ids[0]
-    newProducts.push(newProduct)
-    var newProductAlt = { title: 'Beyonce product' }
-    newProductAlt.id = ids[1]
-    newProducts.push(newProductAlt)
-    convictional.putProducts(newProducts).then((record) => {
-      expect(record).eql({Modified: 2})
-      done()
-    }).catch((error) => { done(error) })
-  })
-
   it('it should delete ONE product', (done) => {
     convictional.deleteProduct(id).then((record) => {
       expect(record).eql({Deleted: 1})

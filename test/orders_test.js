@@ -123,16 +123,6 @@ describe('/orders', function () {
       done()
     })
   })
-  it('it should create MANY orders', (done) => {
-    convictional.postOrders(multiOrderEntry).then((record) => {
-      var objectIds = record
-      ids = Object.keys(objectIds).map(key => {
-        return objectIds[key]
-      })
-      expect(Object.keys(record).length).to.eql(2)
-      done()
-    })
-  })
   it('it should return orders by date', (done) => {
     var getOrdersQuery = { 'updatedAfter': moment().subtract(365, 'days').format() }
     convictional.getOrders(getOrdersQuery).then((orders) => {
@@ -195,19 +185,6 @@ describe('/orders', function () {
       expect(record).to.have.property('addresses').eql(orderEntry.addresses)
       expect(record).to.have.property('complete').equal(newOrder.complete)
       expect(record).to.have.property('companyId').equal(companyId)
-      done()
-    })
-  })
-  it('it should update MANY orders', (done) => {
-    var newOrders = []
-    var newOrder = { partner: 'not-convictional-dropshipper' }
-    newOrder.id = ids[0]
-    newOrders.push(newOrder)
-    var newOrderAlt = { partner: 'not-convictional-dropshipper-ca' }
-    newOrderAlt.id = ids[1]
-    newOrders.push(newOrderAlt)
-    convictional.putOrders(newOrders).then((record) => {
-      expect(record).eql({Modified: 2})
       done()
     })
   })

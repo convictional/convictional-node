@@ -85,16 +85,6 @@ describe('/prices', function () {
       done()
     })
   })
-  it('it should create MANY prices', (done) => {
-    convictional.postPrices(multiPriceEntry).then((record) => {
-      var objectIds = record
-      ids = Object.keys(objectIds).map(key => {
-        return objectIds[key]
-      })
-      expect(Object.keys(record).length).to.eql(2)
-      done()
-    })
-  })
   it('it should list ONE price', (done) => {
     convictional.getPrice(id).then((record) => {
       expect(record).to.have.property('_id').equal(id)
@@ -164,19 +154,6 @@ describe('/prices', function () {
       expect(record).to.have.property('rounding').equal(priceEntry.rounding)
       expect(record).to.have.property('list').eql(priceEntry.list)
       expect(record).to.have.property('companyId').equal(companyId)
-      done()
-    })
-  })
-  it('it should update MANY prices', (done) => {
-    var newPrices = []
-    var newPrice = { currencyName: 'PKR' }
-    newPrice.id = ids[0]
-    newPrices.push(newPrice)
-    var newPriceAlt = { currencyName: 'JPN' }
-    newPriceAlt.id = ids[1]
-    newPrices.push(newPriceAlt)
-    convictional.putPrices(newPrices).then((record) => {
-      expect(record).eql({Modified: 2})
       done()
     })
   })
