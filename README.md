@@ -11,6 +11,9 @@ The library will be updated as the API changes so ensure you keep it up to date.
 To install, type: 
 `npm install convictional`
 
+To test, run:
+`npm run test`
+
 ## Config
 
 You can optionally pass configurations like your API key or API URL in like so:
