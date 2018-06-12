@@ -117,6 +117,10 @@ getOrders(query)
 
 ## Changelog
 
+## 1.5.7 - 2018-06-12
+
+* Adding programmatic unsubscribe.
+
 ## 1.5.6 - 2018-06-04
 
 * Removing all bulk create endpoints.
