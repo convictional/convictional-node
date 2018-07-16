@@ -119,7 +119,7 @@ getOrders(query)
 
 ## 1.7.0 - 2018-07-16
 
-* Cleaning up recursive queuing for submissions with over 100 records
+* Cleaning up recursive queuing for submissions with over 100 records.
 
 ## 1.5.7 - 2018-06-12
 
