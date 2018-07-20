@@ -1,14 +1,14 @@
 # Introduction
 
-This is the Node.JS client library for the Convictional Commerce API.
+This is the Node.JS client library for the [Convictional Commerce](https://convictional.com) API.
 
-For more documentation, please visit our docs site [here](http://docs.convictional.com).
+For more documentation, please visit [our docs site](https://docs.convictional.com). If you have any other questions, visit [our support site](https://help.convictional.com).
 
 This is the best way to build apps on Convictional. This library offers complete test coverage across all RPC and REST endpoints and is used in production for all integration work that we do.
 
 The library will be updated as the API changes so ensure you keep it up to date.
 
-To install, type: 
+To install, type:
 `npm install convictional`
 
 To test, run:
@@ -50,7 +50,7 @@ convictional.getOrder(orderId, apiKey).then((order) => {
 * Methods start with the HTTP method and end with the resource: getOrders, postProducts, etc.
 * The first parameter is a string, object or array with the payload for the request.
 * The optional second parameter is the API key for the account you are using.
-* The optional third parameter is the API URL, defaults to main API url: https://api.convictional.com.
+* The optional third parameter is the API URL, defaults to main API url: `https://api.convictional.com`.
 * All methods return promises, so you must use then/catch verbs to handle them.
 
 ### Method usage example
@@ -64,13 +64,13 @@ getOrders(query)
 
 ### List of methods
 
-##### Actions (RPC)
+#### Actions (RPC)
 
 * `sync(method)` - GET (runs and queues) one method, by method name
 * `translate(doc)` - POST (translate) one document, by document
 * `invite(email)` - POST (invites) one partner, by partner
 
-##### Orders (REST)
+#### Orders (REST)
 
 * `getOrder(id)` - GET (read) one order, by ID
 * `getOrders(query)` - GET (read) many orders, by query
@@ -79,7 +79,7 @@ getOrders(query)
 * `putOrders(orders)` - PUT (update) many orders, by array of orders
 * `deleteOrder(id)` - DELETE (delete) one order, by ID
 
-##### Products (REST)
+#### Products (REST)
 
 * `getProduct(id)` - GET (read) one product, by ID
 * `getProducts(query)` - GET (read) many products, by query
@@ -88,7 +88,7 @@ getOrders(query)
 * `putProducts(products)` - PUT (update) many products, by array of products
 * `deleteProduct(id)` - DELETE (delete) one product, by ID
 
-##### Partners (REST)
+#### Partners (REST)
 
 * `getPartner(id)` - GET (read) one partner, by ID
 * `getPartners(query)` - GET (read) many partners, by query
@@ -97,7 +97,7 @@ getOrders(query)
 * `putPartners(partners)` - PUT (update) many partners, by array of partners
 * `deletePartner(id)` - DELETE (delete) one partner, by ID
 
-##### Prices (REST)
+#### Prices (REST)
 
 * `getPrice(id)` - GET (read) one price, by ID
 * `getPrices(query)` - GET (read) many prices, by query
@@ -106,7 +106,7 @@ getOrders(query)
 * `putPrices(prices)` - PUT (update) many prices, by array of prices
 * `deletePrice(id)` - DELETE (delete) one price, by ID
 
-##### Logs (REST)
+#### Logs (REST)
 
 * `getLog(id)` - GET (read) one log, by ID
 * `getLogs(query)` - GET (read) many logs, by query
@@ -117,7 +117,11 @@ getOrders(query)
 
 ## Changelog
 
-## 1.7.0 - 2018-07-16
+Below is a list of changes and the date the change went live.
+
+For announcements of new functionality, visit [our blog](https://blog.convictional.com).
+
+## 1.7.1 - 2018-07-16
 
 * Cleaning up recursive queuing for submissions with over 100 records.
 
@@ -192,9 +196,6 @@ getOrders(query)
 ## 1.1.0 - 2018-03-06
 
 * Adding methods to manage users.
-
-## 1.1.0 - 2018-03-06
-
 * Supports JSON object queries instead of string containing params already encoded.
 
 ## 1.0.12 - 2018-03-05
