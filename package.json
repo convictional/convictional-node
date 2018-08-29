@@ -1,6 +1,6 @@
 {
   "name": "convictional",
-  "version": "1.7.21",
+  "version": "1.7.3",
   "main": "./lib/api.js",
   "description": "A Node.JS client for the Convictional Commerce API",
   "scripts": {
