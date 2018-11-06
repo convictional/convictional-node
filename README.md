@@ -121,6 +121,10 @@ Below is a list of changes and the date the change went live.
 
 For announcements of new functionality, visit [our blog](https://blog.convictional.com).
 
+## 1.7.51 - 2018-11-06
+
+* Adding the ability to refund an order.
+
 ## 1.7.1 - 2018-07-16
 
 * Cleaning up recursive queuing for submissions with over 100 records.
