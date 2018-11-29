@@ -15,8 +15,6 @@ var ids = []
 var priceEntry = {
   code: '12346',
   listName: 'Price List for Canada',
-  startDate: '2018/01/01 00:00:00',
-  endDate: '2018/01/31 23:59:59',
   currencyName: 'CAD',
   conversion: 1,
   markup: 100,
@@ -40,8 +38,6 @@ var newPrice = { markup: 120, conversion: 2, currencyName: 'USD' }
 var anotherPriceEntry = {
   code: '12543',
   listName: 'Price List for USA',
-  startDate: '2018/01/01 00:00:00',
-  endDate: '2018/01/31 23:59:59',
   currencyName: 'CAD',
   conversion: 1.2,
   markup: 120,
@@ -74,8 +70,6 @@ describe('/prices', function () {
       expect(record).to.have.property('updated')
       expect(record).to.have.property('code').equal(priceEntry.code)
       expect(record).to.have.property('listName').equal(priceEntry.listName)
-      expect(record).to.have.property('startDate').equal(priceEntry.startDate)
-      expect(record).to.have.property('endDate').equal(priceEntry.endDate)
       expect(record).to.have.property('currencyName').equal(priceEntry.currencyName)
       expect(record).to.have.property('conversion').equal(priceEntry.conversion)
       expect(record).to.have.property('markup').equal(priceEntry.markup)
@@ -92,8 +86,6 @@ describe('/prices', function () {
       expect(record).to.have.property('updated')
       expect(record).to.have.property('code').equal(priceEntry.code)
       expect(record).to.have.property('listName').equal(priceEntry.listName)
-      expect(record).to.have.property('startDate').equal(priceEntry.startDate)
-      expect(record).to.have.property('endDate').equal(priceEntry.endDate)
       expect(record).to.have.property('currencyName').equal(priceEntry.currencyName)
       expect(record).to.have.property('conversion').equal(priceEntry.conversion)
       expect(record).to.have.property('markup').equal(priceEntry.markup)
@@ -146,8 +138,6 @@ describe('/prices', function () {
       expect(record).to.have.property('updated')
       expect(record).to.have.property('code').equal(priceEntry.code)
       expect(record).to.have.property('listName').equal(priceEntry.listName)
-      expect(record).to.have.property('startDate').equal(priceEntry.startDate)
-      expect(record).to.have.property('endDate').equal(priceEntry.endDate)
       expect(record).to.have.property('currencyName').equal(newPrice.currencyName)
       expect(record).to.have.property('conversion').equal(newPrice.conversion)
       expect(record).to.have.property('markup').equal(newPrice.markup)
