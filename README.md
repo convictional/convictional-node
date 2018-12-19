@@ -69,6 +69,7 @@ getOrders(query)
 * `sync(method)` - GET (runs and queues) one method, by method name
 * `translate(doc)` - POST (translate) one document, by document
 * `invite(email)` - POST (invites) one partner, by partner
+* `quickOrder(order)` - POST (orders) an order by partner
 
 #### Orders (REST)
 
@@ -120,6 +121,10 @@ getOrders(query)
 Below is a list of changes and the date the change went live.
 
 For announcements of new functionality, visit [our blog](https://blog.convictional.com).
+
+## 1.7.54 - 2018-12-19
+
+* Adding support for Quick Order.
 
 ## 1.7.53 - 2018-11-29
 
