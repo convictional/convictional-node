@@ -43,7 +43,7 @@ describe('/partners', function () {
       expect(record).to.have.property('relationship').equal(partnerEntry.relationship)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should return partners from this year', (done) => {
     var getPartnersQuery = { 'updatedAfter': moment().subtract(365, 'days').format() }
@@ -62,35 +62,35 @@ describe('/partners', function () {
       expect(record).to.have.property('relationship').equal(partnerEntry.relationship)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should list ALL partners', (done) => {
     var query = {}
     convictional.getPartners(query).then((record) => {
       expect(record).to.be.an('array')
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should return second page', (done) => {
     var query = { 'page': 2, 'limit': 1 }
     convictional.getPartners(query).then((record) => {
       expect(record.length).to.equal(1)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should return single record', (done) => {
     var query = { 'limit': 1 }
     convictional.getPartners(query).then((record) => {
       expect(record.length).to.equal(1)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should count records', (done) => {
     var query = { 'count': true }
     convictional.getPartners(query).then((record) => {
       expect(record.count).to.be.a('number')
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should update ONE partner', (done) => {
     newPartner._id = id
@@ -104,12 +104,12 @@ describe('/partners', function () {
       expect(record).to.have.property('relationship').equal(partnerEntry.relationship)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should delete ONE partner', (done) => {
     convictional.deletePartner(id).then((record) => {
-      expect(record).eql({Deleted: 1})
+      expect(record).eql({ Deleted: 1 })
       done()
-    })
+    }).catch((error) => { done(error) })
   })
 })

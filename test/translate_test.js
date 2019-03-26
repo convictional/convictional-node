@@ -17,6 +17,6 @@ describe('/translate', function () {
     convictional.translate(goodDoc).then((newDoc) => {
       expect(newDoc).to.be.an('object')
       done()
-    })
+    }).catch((error) => { done(error) })
   })
 })

@@ -95,7 +95,7 @@ describe('/logs', () => {
   })
   it('it should delete ONE log', (done) => {
     convictional.deleteLog(id).then((records) => {
-      expect(records).eql({Deleted: 1})
+      expect(records).eql({ Deleted: 1 })
       done()
     }).catch((error) => { done(error) })
   })

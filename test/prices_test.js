@@ -77,7 +77,7 @@ describe('/prices', function () {
       expect(record).to.have.property('list').eql(priceEntry.list)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should list ONE price', (done) => {
     convictional.getPrice(id).then((record) => {
@@ -93,7 +93,7 @@ describe('/prices', function () {
       expect(record).to.have.property('list').eql(priceEntry.list)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should return prices by status', (done) => {
     var getPricesQuery = { 'active': true }
@@ -107,28 +107,28 @@ describe('/prices', function () {
     convictional.getPrices(query).then((record) => {
       expect(record).to.be.an('array')
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should return second page', (done) => {
     var query = { 'page': 2, 'limit': 1 }
     convictional.getPrices(query).then((record) => {
       expect(record.length).to.equal(1)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should return single record', (done) => {
     var query = { 'limit': 1 }
     convictional.getPrices(query).then((record) => {
       expect(record.length).to.equal(1)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should count records', (done) => {
     var query = { 'count': true }
     convictional.getPrices(query).then((record) => {
       expect(record.count).to.be.a('number')
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should update ONE price', (done) => {
     newPrice._id = id
@@ -145,12 +145,12 @@ describe('/prices', function () {
       expect(record).to.have.property('list').eql(priceEntry.list)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should delete ONE price', (done) => {
     convictional.deletePrice(id).then((record) => {
-      expect(record).eql({Deleted: 1})
+      expect(record).eql({ Deleted: 1 })
       done()
-    })
+    }).catch((error) => { done(error) })
   })
 })

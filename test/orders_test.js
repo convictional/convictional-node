@@ -121,7 +121,7 @@ describe('/orders', function () {
       expect(record).to.have.property('addresses').eql(orderEntry.addresses)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should return orders by date', (done) => {
     var getOrdersQuery = { 'updatedAfter': moment().subtract(365, 'days').format() }
@@ -142,35 +142,35 @@ describe('/orders', function () {
       expect(record).to.have.property('addresses').eql(orderEntry.addresses)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should list ALL orders', (done) => {
     var query = {}
     convictional.getOrders(query).then((record) => {
       expect(record).to.be.an('array')
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should return second page', (done) => {
     var query = { 'page': 2, 'limit': 1 }
     convictional.getOrders(query).then((record) => {
       expect(record.length).to.equal(1)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should return single record', (done) => {
     var query = { 'limit': 1 }
     convictional.getOrders(query).then((record) => {
       expect(record.length).to.equal(1)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should count records', (done) => {
     var query = { 'count': true }
     convictional.getOrders(query).then((record) => {
       expect(record.count).to.be.a('number')
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should update ONE order', (done) => {
     newOrder._id = id
@@ -186,12 +186,12 @@ describe('/orders', function () {
       expect(record).to.have.property('complete').equal(newOrder.complete)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should delete ONE order', (done) => {
     convictional.deleteOrder(id).then((record) => {
-      expect(record).eql({Deleted: 1})
+      expect(record).eql({ Deleted: 1 })
       done()
-    })
+    }).catch((error) => { done(error) })
   })
 })

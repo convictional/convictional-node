@@ -102,7 +102,7 @@ describe('/products', function () {
       expect(record).to.have.property('vendor').equal(productEntry.vendor)
       expect(record).to.have.property('companyId').equal(companyId)
       done()
-    })
+    }).catch((error) => { done(error) })
   })
   it('it should list ALL products', (done) => {
     var query = {}
@@ -170,7 +170,7 @@ describe('/products', function () {
   })
   it('it should delete ONE product', (done) => {
     convictional.deleteProduct(id).then((record) => {
-      expect(record).eql({Deleted: 1})
+      expect(record).eql({ deleted: 1 })
       done()
     }).catch((error) => { done(error) })
   })
