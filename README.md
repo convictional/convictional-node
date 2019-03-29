@@ -1,6 +1,6 @@
 # Introduction
 
-This is the Node.JS client library for the [Convictional Commerce](https://convictional.com) API.
+This is the Node.JS client library for the [Convictional](https://convictional.com) API.
 
 For more documentation, please visit [our docs site](https://docs.convictional.com). If you have any other questions, visit [our support site](https://support.convictional.com).
 

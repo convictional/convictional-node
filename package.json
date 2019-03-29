@@ -1,8 +1,8 @@
 {
   "name": "convictional",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "main": "./lib/api.js",
-  "description": "A Node.JS client for the Convictional Commerce API",
+  "description": "A Node.JS client for the Convictional API",
   "scripts": {
     "test": "NODE_ENV=test node_modules/.bin/mocha -u exports test/*",
     "commit": "git add -A && git commit -m \"Bump version to $npm_package_version\" && git push",
@@ -20,7 +20,7 @@
     "integration",
     "dropship"
   ],
-  "author": "Convictional Commerce, Inc.",
+  "author": "Convictional, Inc.",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/convictional/convictional-node/issues"
