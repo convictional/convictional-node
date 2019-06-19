@@ -5,9 +5,7 @@
   "description": "A Node.JS client for the Convictional API",
   "scripts": {
     "test": "NODE_ENV=test node_modules/.bin/mocha -u exports test/*",
-    "commit": "git add -A && git commit -m \"Bump version to $npm_package_version\" && git push",
     "deploy": "npm publish",
-    "code": "npm run commit && npm run deploy"
   },
   "repository": {
     "type": "git",
@@ -18,7 +16,8 @@
     "ecommerce",
     "api",
     "integration",
-    "dropship"
+    "dropship",
+    "marketplace"
   ],
   "author": "Convictional, Inc.",
   "license": "MIT",
