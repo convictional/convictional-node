@@ -5,7 +5,7 @@
   "description": "A Node.JS client for the Convictional API",
   "scripts": {
     "test": "NODE_ENV=test node_modules/.bin/mocha -u exports test/*",
-    "deploy": "npm publish",
+    "deploy": "npm publish"
   },
   "repository": {
     "type": "git",
