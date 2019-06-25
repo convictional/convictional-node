@@ -17,7 +17,6 @@ var priceEntry = {
   listName: 'Price List for Canada',
   currencyName: 'CAD',
   conversion: 1,
-  markup: 100,
   rounding: '99',
   list: [
     {
@@ -40,7 +39,6 @@ var anotherPriceEntry = {
   listName: 'Price List for USA',
   currencyName: 'CAD',
   conversion: 1.2,
-  markup: 120,
   rounding: '00',
   list: [
     {
@@ -72,7 +70,6 @@ describe('/prices', function () {
       expect(record).to.have.property('listName').equal(priceEntry.listName)
       expect(record).to.have.property('currencyName').equal(priceEntry.currencyName)
       expect(record).to.have.property('conversion').equal(priceEntry.conversion)
-      expect(record).to.have.property('markup').equal(priceEntry.markup)
       expect(record).to.have.property('rounding').equal(priceEntry.rounding)
       expect(record).to.have.property('list').eql(priceEntry.list)
       expect(record).to.have.property('companyId').equal(companyId)
@@ -88,7 +85,6 @@ describe('/prices', function () {
       expect(record).to.have.property('listName').equal(priceEntry.listName)
       expect(record).to.have.property('currencyName').equal(priceEntry.currencyName)
       expect(record).to.have.property('conversion').equal(priceEntry.conversion)
-      expect(record).to.have.property('markup').equal(priceEntry.markup)
       expect(record).to.have.property('rounding').equal(priceEntry.rounding)
       expect(record).to.have.property('list').eql(priceEntry.list)
       expect(record).to.have.property('companyId').equal(companyId)
@@ -140,7 +136,6 @@ describe('/prices', function () {
       expect(record).to.have.property('listName').equal(priceEntry.listName)
       expect(record).to.have.property('currencyName').equal(newPrice.currencyName)
       expect(record).to.have.property('conversion').equal(newPrice.conversion)
-      expect(record).to.have.property('markup').equal(newPrice.markup)
       expect(record).to.have.property('rounding').equal(priceEntry.rounding)
       expect(record).to.have.property('list').eql(priceEntry.list)
       expect(record).to.have.property('companyId').equal(companyId)
